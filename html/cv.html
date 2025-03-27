@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Portfolio MBARKI Nouh</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cv.css">
+    <script src="../javascript/cv.js" defer></script>
+</head>
+<body>
+
+    <!-- HEADER (IDENTIQUE À L'ACCUEIL) -->
+    <header>
+        <div class="logo">
+            <a href="https://www.limayrac.fr/" target="_blank">
+                <img src="../images/limayrac_logo.jpg" alt="Institut Limayrac">
+            </a>
+        </div>
+        <div class="header-title">
+            <h1>Portfolio de MBARKI Nouh (SLAM)</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a href="competences.html">Bloc de Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="veille.html">Veille Technologique</a></li>
+            </ul>
+        </nav>
+            
+        <div class="header-right">
+            <a href="https://www.limayrac.fr/formation/bts-institut-limayrac-services-informatiques-organisations/" target="_blank">
+                BTS SIO Limayrac
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION PRÉSENTATION CV AVEC HORLOGE (IDENTIQUE À ACCUEIL) -->
+    <section class="cv-intro">
+        <h2>📄 Découvrez mon CV</h2>
+        <p>Consultez mes expériences professionnelles et académiques.</p>
+    </section>
+    
+    <!-- Horloge en dessous -->
+    <div class="date-heure" id="dateHeure"></div>
+
+    <!-- DATE & HEURE JUSTE EN DESSOUS -->
+        <div class="date-section">
+    <p class="date-heure" id="dateHeure"></p>
+        </div>
+
+    <!-- SECTION AFFICHAGE DU CV -->
+    <section class="cv-section">
+        <button id="downloadCV">📥 Télécharger mon CV</button>
+        <div class="cv-container">
+            <iframe src="../pdf/CV_Nouh.pdf" id="cvFrame"></iframe>
+        </div>
+    </section>
+
+    <!-- TIMELINE EXPÉRIENCES & DIPLÔMES -->
+    <section class="timeline-section">
+        <h2>Parcours Professionnel & Académique</h2>
+        <div class="timeline">
+            <!-- Expériences -->
+            <div class="timeline-column">
+                <h3>📌 Expériences</h3>
+                <div class="timeline-box">
+                    <span class="date">Janv. - Fév. 2025</span>
+                    <h4>Stagiaire Développeur Front-End</h4>
+                    <p><b>Thermo Cold Solutions</b></p>
+                    <ul>
+                        <li>Création d’un <b>site vitrine responsive</b> (HTML, CSS, JavaScript).</li>
+                        <li>Optimisation UX/UI et adaptation mobile.</li>
+                        <li>Développement à distance.</li>
+                        <li>Projet en ligne : <a href="https://thermocoldsolutions.com" target="_blank">thermocoldsolutions.com</a></li>
+                    </ul>
+                </div>
+                <div class="timeline-box">
+                    <span class="date">Mai - Juin 2024</span>
+                    <h4>Stagiaire Développeur Full Stack</h4>
+                    <p><b>LAKN Service</b></p>
+                    <ul>
+                        <li>Développement d’une interface web avec <b>Angular, TypeScript, CSS</b>.</li>
+                        <li>Optimisation UX/UI.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Diplômes -->
+            <div class="timeline-column">
+                <h3>🎓 Diplômes</h3>
+                <div class="timeline-box">
+                    <span class="date">2025 - 2026</span>
+                    <h4>Bachelor DSN</h4>
+                    <p>Institut Limayrac - Toulouse (ADMIS)</p>
+                </div>
+                <div class="timeline-box">
+                    <span class="date">2023 - 2025</span>
+                    <h4>BTS SIO - SLAM</h4>
+                    <p>Institut Limayrac - Toulouse</p>
+                </div>
+                <div class="timeline-box">
+                    <span class="date">2019 - 2020</span>
+                    <h4>Bac STMG</h4>
+                    <p>Lycée Polyvalent Bellevue - Toulouse</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER IDENTIQUE À L'ACCUEIL -->
+    <footer>
+        <p>© 2024 - Nouh Mbarki | Développeur Web</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/nouh-mbarki-b04031295" target="_blank">LinkedIn</a>
+            <a href="https://github.com/NouhMBARKI-31" target="_blank">GitHub</a>
+            <a href="mailto:nouh.mbarkielamrani@limayrac.fr">Me contacter</a>
+        </div>
+        <button id="topButton" title="Retour en haut">↑ Retour en haut</button>
+    </footer>
+
+</body>
+</html>

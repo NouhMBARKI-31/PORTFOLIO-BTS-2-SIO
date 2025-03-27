@@ -1,0 +1,257 @@
+/* 🎨 SECTION INTRODUCTION */
+.experience-intro {
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #28A745, #1E8449);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    max-width: 900px;
+    animation: fadeIn 1s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.experience-intro h2,
+.experience-intro p {
+    color: white;
+}
+
+.experience-intro h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-intro p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* 🕒 DATE & HEURE */
+.date-heure {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 📌 TITRE SECTION STAGES */
+.experiences-section h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #2C3E50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.experiences-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #4CAF50;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* 📂 CONTAINER DES EXPÉRIENCES */
+.experience-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+/* 📄 CARTE STAGE */
+.experience-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    width: 45%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 8px;
+}
+
+.experience-card h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.experience-card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.experience-card ul li {
+    margin-bottom: 8px;
+}
+
+/* 🎯 BOUTONS ALIGNÉS */
+.experience-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-details {
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    flex: 1;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.btn-details:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-download:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 📂 CONTENU DÉTAILLÉ STYLÉ */
+.details {
+    display: none;
+    margin-top: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 4px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.details.show {
+    display: block;
+    opacity: 1;
+}
+
+.details h3 {
+    font-size: 18px;
+    color: #4CAF50;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.details p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.details ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.details ul li {
+    margin-bottom: 8px;
+    list-style-type: "✅ ";
+}
+
+/* 🔼 BOUTON RETOUR EN HAUT */
+#topButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#topButton:hover {
+    background-color: #3e8e41;
+    transform: scale(1.05);
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .experience-card {
+        width: 90%;
+    }
+
+    .experience-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-details,
+    .btn-download {
+        width: 100%;
+    }
+}
+
+/* ✨ ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

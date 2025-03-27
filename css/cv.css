@@ -1,0 +1,248 @@
+/* 🎨 SECTION INTRODUCTION CV */
+.cv-intro {
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #28A745, #1E8449); /* Même gradient que l'accueil */
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    max-width: 900px;
+    animation: fadeIn 1s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.cv-intro h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.cv-intro p {
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.date-heure {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 📄 SECTION AFFICHAGE DU CV */
+.cv-section {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.cv-container iframe {
+    width: 80%;
+    height: 600px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cv-container iframe:hover {
+    transform: scale(1.01);
+}
+
+/* 📥 BOUTON TÉLÉCHARGER CV */
+#downloadCV {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#downloadCV:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+/* 🕒 TIMELINE EXPÉRIENCES & DIPLÔMES */
+.timeline {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.timeline-column {
+    width: 45%;
+}
+
+.timeline-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.timeline-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 🎓 TITRES DES COLONNES TIMELINE */
+.timeline-column h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+/* 🗓️ TITRE ET DATE DANS LA TIMELINE */
+.timeline-box .date {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+#topButton {
+    position: fixed; /* Maintenant il bouge avec le scroll */
+    right: 20px;
+    bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#topButton:hover {
+    background-color: #3e8e41;
+    transform: scale(1.05);
+}
+
+#topButton:hover {
+    background-color: #3e8e41;
+    transform: scale(1.05);
+}
+
+/* 🔽 FOOTER */
+footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* 📱 RESPONSIVE DESIGN POUR MOBILE */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+    .timeline-column {
+        width: 90%;
+    }
+    #cvFrame {
+        width: 95%;
+        height: 500px;
+    }
+}
+
+/* ✨ ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🏆 TITRE PRINCIPAL TIMELINE */
+.timeline-section h2 {
+    text-align: center;  /* Centrage horizontal */
+    font-size: 30px;     /* Taille plus grande */
+    font-weight: bold;   /* Met en gras */
+    font-family: 'Poppins', sans-serif; /* Police moderne */
+    color: #2C3E50;  /* Bleu foncé élégant */
+    text-transform: uppercase; /* Met tout en majuscules */
+    letter-spacing: 1px; /* Espacement des lettres */
+    margin-bottom: 30px; /* Espace sous le titre */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet pro */
+    position: relative; /* Permet d'ajouter une icône */
+    padding-bottom: 10px; /* Ajoute un espace sous le titre */
+}
+
+/* 📂 Ajout d'une icône avant le titre */
+.timeline-section h2::before {
+    content: "📂"; /* Icône de dossier */
+    font-size: 28px; /* Taille de l'icône */
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 🎨 Ajout d'une ligne sous le titre pour un effet visuel */
+.timeline-section h2::after {
+    content: "";
+    display: block;
+    width: 80px; /* Longueur de la ligne */
+    height: 3px; /* Épaisseur de la ligne */
+    background: #4CAF50; /* Couleur verte */
+    margin: 10px auto; /* Centre la ligne sous le titre */
+    border-radius: 5px; /* Arrondit les bords */
+}

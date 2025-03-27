@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expériences - Portfolio MBARKI Nouh</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/experiences.css">
+    <script src="../javascript/experiences.js" defer></script>
+</head>
+<body>
+
+    <!-- HEADER (Identique à Accueil et CV) -->
+    <header>
+        <div class="logo">
+            <a href="https://www.limayrac.fr/" target="_blank">
+                <img src="../images/limayrac_logo.jpg" alt="Institut Limayrac">
+            </a>
+        </div>
+        <div class="header-title">
+            <h1>Portfolio de MBARKI Nouh (SLAM)</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="experiences.html" class="active">Expériences</a></li>
+                <li><a href="competences.html">Bloc de Compétences</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="veille.html">Veille Technologique</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <a href="https://www.limayrac.fr/formation/bts-institut-limayrac-services-informatiques-organisations/" target="_blank">
+                BTS SIO Limayrac
+            </a>
+        </div>
+    </header>
+
+    <!-- INTRODUCTION (Comme dans CV et Accueil) -->
+    <section class="experience-intro">
+        <h2>🚀 Mes Expériences Professionnelles</h2>
+        <p>Découvrez mes stages réalisés durant mon BTS SIO.</p>
+    </section>
+
+    <!-- Horloge dynamique sous l'intro -->
+    <div class="date-heure" id="dateHeure"></div>
+
+    <!-- SECTION STAGES -->
+    <section class="experiences-section">
+        <h2>📌 Mes Stages</h2>
+
+        <div class="experience-container">
+
+            <!-- Stage 2025 -->
+            <div class="experience-card">
+                <h3>📆 Janv. - Fév. 2025</h3>
+                <h4>Stagiaire Développeur Front-End</h4>
+                <p><b>Entreprise :</b> Thermo Cold Solutions</p>
+                <ul>
+                    <li>Développement d’un <b>site vitrine responsive</b> (HTML, CSS, JavaScript).</li>
+                    <li>Optimisation UX/UI et adaptation mobile.</li>
+                    <li>Développement à distance.</li>
+                    <li>Projet en ligne : <a href="https://thermocoldsolutions.com" target="_blank">thermocoldsolutions.com</a></li>
+                </ul>
+                <div class="experience-actions">
+                    <button class="btn-details" onclick="toggleDetails('details-2025')">Voir plus</button>
+                    <a href="../pdf/MBARKI_Nouh_Rapport_Stage_2025.pdf" class="btn-download" onclick="forceDownload(event, '../pdf/MBARKI_Nouh_Rapport_Stage_2025.pdf')">📥 Télécharger</a>
+                </div>
+                <div class="details" id="details-2025">
+                    <p>Ce stage m’a permis d’approfondir mes compétences en front-end, notamment sur l’optimisation UX/UI et le développement responsive.</p>
+                </div>
+            </div>
+
+            <!-- Stage 2024 -->
+            <div class="experience-card">
+                <h3>📆 Mai - Juin 2024</h3>
+                <h4>Stagiaire Développeur Full Stack</h4>
+                <p><b>Entreprise :</b> LAKN Service</p>
+                <ul>
+                    <li>Développement d’une interface web en <b>Angular et TypeScript</b>.</li>
+                    <li>Optimisation UX/UI.</li>
+                    <li>Travail sous la supervision d’un développeur full stack.</li>
+                </ul>
+                <div class="experience-actions">
+                    <button class="btn-details" onclick="toggleDetails('details-2024')">Voir plus</button>
+                    <a href="../pdf/SIO_Rapport_Stage_v1_MBARKI.pdf" class="btn-download" onclick="forceDownload(event, '../pdf/SIO_Rapport_Stage_v1_MBARKI.pdf')">📥 Télécharger</a>
+                </div>
+                <div class="details" id="details-2024">
+                    <p>Ce stage m’a permis d’apprendre le développement en Angular, la gestion d’interfaces dynamiques et le travail en équipe.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER IDENTIQUE À L'ACCUEIL -->
+    <footer>
+        <p>© 2024 - Nouh Mbarki | Développeur Web</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/nouh-mbarki-b04031295" target="_blank">LinkedIn</a>
+            <a href="https://github.com/NouhMBARKI-31" target="_blank">GitHub</a>
+            <a href="mailto:nouh.mbarkielamrani@limayrac.fr">Me contacter</a>
+        </div>
+        <button id="topButton" title="Retour en haut">↑ Retour en haut</button>
+    </footer>
+
+    <script>
+        function forceDownload(event, fileUrl) {
+            event.preventDefault(); // Empêche l’ouverture du fichier dans un nouvel onglet
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = fileUrl.split("/").pop(); // Définit le nom du fichier
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>
