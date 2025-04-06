@@ -72,7 +72,7 @@
 .experience-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: stretch; 
     gap: 30px;
     flex-wrap: wrap;
     margin: 40px auto;
@@ -86,11 +86,11 @@
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     width: 45%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .experience-card:hover {
