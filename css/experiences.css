@@ -86,7 +86,12 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     width: 45%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 470px; /* ✅ alignement visuel des cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 
 .experience-card:hover {
     transform: scale(1.03);
