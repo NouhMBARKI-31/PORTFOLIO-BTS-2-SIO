@@ -86,12 +86,11 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     width: 45%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 470px; /* ✅ alignement visuel des cartes */
+    min-height: 470px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
 
 .experience-card:hover {
     transform: scale(1.03);
@@ -170,11 +169,12 @@
 .details {
     display: none;
     margin-top: 10px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-left: 4px solid #4CAF50;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    background: #f5fef7;
+    border-left: 6px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease-in-out;
     opacity: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -185,26 +185,34 @@
 }
 
 .details h3 {
+    color: #2e7d32;
     font-size: 18px;
-    color: #4CAF50;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-
-.details p {
-    font-size: 16px;
-    color: #333;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .details ul {
-    padding-left: 20px;
-    margin-bottom: 10px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
 }
 
-.details ul li {
-    margin-bottom: 8px;
-    list-style-type: "✅ ";
+.details ul li::before {
+    content: "✅ ";
+    margin-right: 6px;
+    color: #388e3c;
+}
+
+.details p {
+    background: #e8f5e9;
+    padding: 15px;
+    border-left: 4px solid #81c784;
+    border-radius: 6px;
+    color: #2e7d32;
+    line-height: 1.6;
+    font-style: italic;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* 🔼 BOUTON RETOUR EN HAUT */
@@ -260,46 +268,3 @@
         transform: translateY(0);
     }
 }
-
-/* 🌟 SECTION VOIR PLUS STYLISÉE */
-.details {
-    background: #f5fef7;
-    border-left: 6px solid #4CAF50;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-.details h3 {
-    color: #2e7d32;
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.details ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-.details ul li::before {
-    content: "✅ ";
-    margin-right: 6px;
-    color: #388e3c;
-}
-
-.details p {
-    background: #e8f5e9;
-    padding: 15px;
-    border-left: 4px solid #81c784;
-    border-radius: 6px;
-    color: #2e7d32;
-    line-height: 1.6;
-    font-style: italic;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
