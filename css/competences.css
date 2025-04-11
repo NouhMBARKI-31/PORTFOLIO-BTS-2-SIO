@@ -20,7 +20,9 @@ body {
     font-size: 32px;
     margin-bottom: 10px;
     text-transform: uppercase;
+    color: white;
 }
+
 
 .competence-intro p {
     font-size: 18px;
