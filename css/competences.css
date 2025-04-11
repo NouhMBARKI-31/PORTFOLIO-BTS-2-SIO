@@ -138,3 +138,15 @@ body {
     }
 }
 
+.section-desc {
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  
