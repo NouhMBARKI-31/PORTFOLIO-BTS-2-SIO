@@ -25,7 +25,9 @@ body {
 .competence-intro p {
     font-size: 18px;
     opacity: 0.9;
+    color: white;
 }
+
 
 .date-heure {
     text-align: center;
@@ -133,3 +135,4 @@ body {
         padding: 0 10px;
     }
 }
+
