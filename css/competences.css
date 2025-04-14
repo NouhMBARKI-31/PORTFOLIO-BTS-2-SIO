@@ -208,4 +208,10 @@ body {
     color: #ccc;
   }
   
+  .capture-group {
+    display: flex;
+    gap: 20px; /* espace horizontal entre les captures */
+    flex-wrap: wrap; /* pour s’adapter si écran plus petit */
+    margin-top: 8px;
+  }
   
