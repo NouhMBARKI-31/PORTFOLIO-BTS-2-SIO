@@ -152,7 +152,7 @@ body {
   
 /* 🖼️ ZOOM IMAGE CAPTURE */
 .zoomable {
-    max-width: 300px; /* ✅ Limite la largeur affichée */
+    max-width: 500px; /* ✅ Limite la largeur affichée */
     height: auto;
     cursor: pointer;
     border-radius: 8px;
