@@ -53,15 +53,18 @@ nav ul li a {
 /* Lien actif dans le menu */
 /* Style du lien actif dans le menu */
 nav ul li a.active {
-    background-color: #4CAF50; /* Couleur verte */
-    color: white; /* Texte en blanc */
-    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 4px 10px; /* ↓ un peu moins d'espace */
     border-radius: 5px;
+    font-size: 14px; /* ← uniformise la taille */
     font-weight: bold;
     text-align: center;
     display: inline-block;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* ← évite les retours à la ligne */
 }
+
 
 nav ul li a:hover {
     color: #4CAF50;
