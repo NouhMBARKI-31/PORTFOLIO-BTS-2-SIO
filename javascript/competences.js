@@ -22,32 +22,36 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // ✅ Zoom modale pour les images simples
+    // ✅ Zoom simple pour les images normales (hors galerie)
     const zoomables = document.querySelectorAll(".zoomable");
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
     const modalClose = document.querySelector(".modal-close");
+    const modalThumbnails = document.getElementById("modalThumbnails");
 
     zoomables.forEach(img => {
         img.addEventListener("click", () => {
             modal.style.display = "block";
             modalImg.src = img.src;
+            modalThumbnails.innerHTML = ""; // Pas de miniatures pour les images simples
         });
     });
 
     modalClose.addEventListener("click", () => {
         modal.style.display = "none";
         modalImg.src = "";
+        modalThumbnails.innerHTML = "";
     });
 
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
             modalImg.src = "";
+            modalThumbnails.innerHTML = "";
         }
     });
 
-    // 🎯 GESTION D'UNE GALERIE ZOOMABLE POUR TRELL0
+    // 🎯 Galerie Trello avec navigation + miniatures
     let currentGallery = [];
     let currentIndex = 0;
 
@@ -64,28 +68,55 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".zoomable-slider").forEach(img => {
         img.addEventListener("click", () => {
             const gallery = img.dataset.gallery;
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImg");
-
             if (gallery && galleryImages[gallery]) {
                 currentGallery = galleryImages[gallery];
                 currentIndex = 0;
                 modal.style.display = "block";
                 modalImg.src = currentGallery[currentIndex];
+                displayThumbnails(currentGallery, currentIndex);
             }
         });
     });
 
-    // 🔁 Navigation avec les flèches du clavier
+    // 🔁 Navigation au clavier
     window.addEventListener("keydown", (e) => {
         if (modal.style.display === "block" && currentGallery.length > 1) {
             if (e.key === "ArrowRight") {
                 currentIndex = (currentIndex + 1) % currentGallery.length;
                 modalImg.src = currentGallery[currentIndex];
+                updateActiveThumbnail();
             } else if (e.key === "ArrowLeft") {
                 currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
                 modalImg.src = currentGallery[currentIndex];
+                updateActiveThumbnail();
             }
         }
     });
+
+    // 📸 Affiche les miniatures
+    function displayThumbnails(images, activeIndex) {
+        modalThumbnails.innerHTML = "";
+        images.forEach((src, index) => {
+            const thumb = document.createElement("img");
+            thumb.src = src;
+            thumb.classList.add("thumbnail");
+            if (index === activeIndex) {
+                thumb.classList.add("active");
+            }
+            thumb.addEventListener("click", () => {
+                currentIndex = index;
+                modalImg.src = currentGallery[currentIndex];
+                updateActiveThumbnail();
+            });
+            modalThumbnails.appendChild(thumb);
+        });
+    }
+
+    // 🔄 Met à jour la miniature active
+    function updateActiveThumbnail() {
+        const thumbnails = modalThumbnails.querySelectorAll("img");
+        thumbnails.forEach((thumb, index) => {
+            thumb.classList.toggle("active", index === currentIndex);
+        });
+    }
 });
