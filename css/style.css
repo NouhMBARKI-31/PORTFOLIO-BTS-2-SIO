@@ -55,9 +55,9 @@ nav ul li a {
 nav ul li a.active {
     background-color: #4CAF50;
     color: white;
-    padding: 4px 10px; /* ↓ un peu moins d'espace */
+    padding: 3px 8px; /* ↓ un peu moins d'espace */
     border-radius: 5px;
-    font-size: 14px; /* ← uniformise la taille */
+    font-size: 13px; /* ← uniformise la taille */
     font-weight: bold;
     text-align: center;
     display: inline-block;
