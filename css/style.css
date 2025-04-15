@@ -57,16 +57,18 @@ nav ul li a.active {
     color: white;
     padding: 4px 10px;
     border-radius: 5px;
-    font-size: 14px; /* ← ajoute ou vérifie ça */
+    font-size: 13px; /* un poil plus petit */
     font-weight: bold;
     text-align: center;
     display: inline-block;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    white-space: nowrap; /* ← assure que le texte reste sur une ligne */
-    max-width: 160px;     /* ← limite la largeur */
-    overflow: hidden;     /* ← cache ce qui dépasse */
-    text-overflow: ellipsis; /* ← affiche ... si trop long */
+    white-space: nowrap;
+    /* supprime les 3 lignes suivantes 👇 */
+    /* max-width: 160px; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
 }
+
 
 
 
