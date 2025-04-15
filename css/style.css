@@ -55,21 +55,18 @@ nav ul li a {
 nav ul li a.active {
     background-color: #4CAF50;
     color: white;
-    padding: 4px 10px;
     border-radius: 5px;
-    font-size: 13px; /* un poil plus petit */
     font-weight: bold;
-    text-align: center;
-    display: inline-block;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
-    /* supprime les 3 lignes suivantes 👇 */
-    /* max-width: 160px; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
 }
 
-
+nav ul li a {
+    padding: 6px 12px;
+    line-height: 1;
+    font-size: 14px;
+    display: inline-block;
+    white-space: nowrap;
+}
 
 
 nav ul li a:hover {
