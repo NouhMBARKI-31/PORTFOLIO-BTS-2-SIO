@@ -215,3 +215,26 @@ body {
     margin-top: 8px;
   }
   
+  .zoomable-slider {
+    max-width: 500px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .zoomable-slider:hover {
+    transform: scale(1.02);
+  }
+  
+  .external-link {
+    display: inline-block;
+    margin-top: 6px;
+    color: #2C3E50;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  
