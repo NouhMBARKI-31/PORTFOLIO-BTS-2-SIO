@@ -392,3 +392,8 @@ footer {
         transform: translateY(0);
     }
 }
+
+a.active {
+    background: red !important;
+    color: yellow !important;
+}
