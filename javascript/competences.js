@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("click", () => {
             modal.style.display = "block";
             modalImg.src = img.src;
-            modalThumbnails.innerHTML = ""; // Pas de miniatures pour les images simples
+            modalImg.style.maxWidth = "90%"; // ajustement taille
+            modalImg.style.maxHeight = "80%"; // ajustement taille
+            modalThumbnails.innerHTML = "";
         });
     });
 
@@ -79,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentIndex = 0;
                 modal.style.display = "block";
                 modalImg.src = currentGallery[currentIndex];
+                modalImg.style.maxWidth = "90%"; // assure la même taille que GLPI
+                modalImg.style.maxHeight = "80%";
                 displayThumbnails(currentGallery, currentIndex);
             }
         });
