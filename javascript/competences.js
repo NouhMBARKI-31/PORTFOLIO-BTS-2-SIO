@@ -11,52 +11,32 @@ document.addEventListener("DOMContentLoaded", function () {
         minute: '2-digit',
         second: '2-digit'
     };
-    dateElement.textContent = now.toLocaleDateString('fr-FR', options);
+    if (dateElement) {
+        dateElement.textContent = now.toLocaleDateString('fr-FR', options);
+    }
 
     // ✅ Bouton retour en haut
     const topButton = document.getElementById("topButton");
-    window.addEventListener("scroll", function () {
-        topButton.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    topButton.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    if (topButton) {
+        window.addEventListener("scroll", function () {
+            topButton.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        topButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 
-    // ✅ Zoom simple pour les images normales (hors galerie)
-    const zoomables = document.querySelectorAll(".zoomable");
+    // ✅ Zoom simple pour toutes les images avec .zoomable ou .zoomable-slider
+    const zoomables = document.querySelectorAll(".zoomable, .zoomable-slider");
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
     const modalClose = document.querySelector(".modal-close");
     const modalThumbnails = document.getElementById("modalThumbnails");
 
-    zoomables.forEach(img => {
-        img.addEventListener("click", () => {
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            modalImg.style.maxWidth = "90%"; // ajustement taille
-            modalImg.style.maxHeight = "80%"; // ajustement taille
-            modalThumbnails.innerHTML = "";
-        });
-    });
-
-    modalClose.addEventListener("click", () => {
-        modal.style.display = "none";
-        modalImg.src = "";
-        modalThumbnails.innerHTML = "";
-    });
-
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-            modalImg.src = "";
-            modalThumbnails.innerHTML = "";
-        }
-    });
-
-    // 🎯 Galerie Trello et Documentation avec navigation + miniatures
     let currentGallery = [];
     let currentIndex = 0;
 
+    // 📸 Liste des galeries disponibles
     const galleryImages = {
         trello: [
             "../images/trello1.png",
@@ -70,20 +50,29 @@ document.addEventListener("DOMContentLoaded", function () {
             "../images/documentation2.png",
             "../images/documentation3.png",
             "../images/documentation4.png"
+        ],
+        dhcp: [
+            "../images/dhcp1.png"
         ]
     };
 
-    document.querySelectorAll(".zoomable-slider").forEach(img => {
+    // 🎯 Clic sur image zoomable ou zoomable-slider
+    zoomables.forEach(img => {
         img.addEventListener("click", () => {
             const gallery = img.dataset.gallery;
             if (gallery && galleryImages[gallery]) {
+                // ✅ Affiche une galerie complète
                 currentGallery = galleryImages[gallery];
                 currentIndex = 0;
                 modal.style.display = "block";
                 modalImg.src = currentGallery[currentIndex];
-                modalImg.style.maxWidth = "90%"; // assure la même taille que GLPI
-                modalImg.style.maxHeight = "80%";
                 displayThumbnails(currentGallery, currentIndex);
+            } else {
+                // ✅ Cas simple (image seule)
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                currentGallery = [];
+                modalThumbnails.innerHTML = "";
             }
         });
     });
@@ -100,6 +89,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 modalImg.src = currentGallery[currentIndex];
                 updateActiveThumbnail();
             }
+        }
+    });
+
+    // ❌ Fermeture de la modale
+    modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+        modalImg.src = "";
+        modalThumbnails.innerHTML = "";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            modalImg.src = "";
+            modalThumbnails.innerHTML = "";
         }
     });
 
