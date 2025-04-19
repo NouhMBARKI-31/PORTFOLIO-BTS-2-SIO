@@ -152,13 +152,17 @@ body {
   
 /* 🖼️ ZOOM IMAGE CAPTURE */
 .zoomable {
-    max-width: 500px; /* ✅ Limite la largeur affichée */
-    height: auto;
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease;
-  }
+  width: 100%;
+  max-width: 600px; /* valeur adaptée à GLPI */
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+  display: block;
+  margin-top: 10px;
+}
+
   
   
   .zoomable:hover {
