@@ -50,12 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "../images/documentation3.png",
             "../images/documentation4.png"
         ],
-        ddhcp: [
-            "../images/dhcp1.png",
-            "../images/dhcp2.png",
-            "../images/dhcp3.png",
-            "../images/dhcp4.png",
-            "../images/dhcp5.png"
+        dhcp: [
+            "../images/dhcp1.png"
         ]
     };
 
