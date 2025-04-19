@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ✅ Zoom simple pour toutes les images avec .zoomable ou .zoomable-slider
+    // ✅ Zoom pour .zoomable et .zoomable-slider
     const zoomables = document.querySelectorAll(".zoomable, .zoomable-slider");
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentGallery = [];
     let currentIndex = 0;
 
-    // 📸 Liste des galeries disponibles
     const galleryImages = {
         trello: [
             "../images/trello1.png",
@@ -56,28 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
         ]
     };
 
-    // 🎯 Clic sur image zoomable ou zoomable-slider
     zoomables.forEach(img => {
         img.addEventListener("click", () => {
             const gallery = img.dataset.gallery;
             if (gallery && galleryImages[gallery]) {
-                // ✅ Affiche une galerie complète
                 currentGallery = galleryImages[gallery];
                 currentIndex = 0;
                 modal.style.display = "block";
                 modalImg.src = currentGallery[currentIndex];
                 displayThumbnails(currentGallery, currentIndex);
+                modalImg.style.maxWidth = "900px"; // même taille que GLPI
             } else {
-                // ✅ Cas simple (image seule)
                 modal.style.display = "block";
                 modalImg.src = img.src;
                 currentGallery = [];
                 modalThumbnails.innerHTML = "";
+                modalImg.style.maxWidth = "500px"; // taille standard
             }
         });
     });
 
-    // 🔁 Navigation au clavier
+    // Navigation clavier
     window.addEventListener("keydown", (e) => {
         if (modal.style.display === "block" && currentGallery.length > 1) {
             if (e.key === "ArrowRight") {
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // ❌ Fermeture de la modale
+    // Fermer modale
     modalClose.addEventListener("click", () => {
         modal.style.display = "none";
         modalImg.src = "";
@@ -107,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 📸 Affiche les miniatures
     function displayThumbnails(images, activeIndex) {
         modalThumbnails.innerHTML = "";
         images.forEach((src, index) => {
@@ -126,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 🔄 Met à jour la miniature active
     function updateActiveThumbnail() {
         const thumbnails = modalThumbnails.querySelectorAll("img");
         thumbnails.forEach((thumb, index) => {
