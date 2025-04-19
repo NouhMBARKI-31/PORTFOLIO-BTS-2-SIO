@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 🎯 Galerie Trello avec navigation + miniatures
+    // 🎯 Galerie Trello et Documentation avec navigation + miniatures
     let currentGallery = [];
     let currentIndex = 0;
 
@@ -62,6 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
             "../images/trello3.png",
             "../images/trello4.png",
             "../images/trello5.png"
+        ],
+        documentation: [
+            "../images/documentation1.png",
+            "../images/documentation2.png",
+            "../images/documentation3.png",
+            "../images/documentation4.png"
         ]
     };
 
