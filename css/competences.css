@@ -220,7 +220,7 @@ body {
   }
   
   .zoomable-slider {
-    max-width: 500px;
+    max-width: 200px;
     width: 100%;
     height: auto;
     cursor: pointer;
