@@ -231,6 +231,13 @@ body {
     display: block;
   }
   
+/* Taille spécifique pour les captures de documentations */
+.doc-size {
+  max-width: 500px; /* identique à .zoomable */
+  height: auto;
+  display: block;
+}
+
   .zoomable-slider:hover {
     transform: scale(1.02);
   }
