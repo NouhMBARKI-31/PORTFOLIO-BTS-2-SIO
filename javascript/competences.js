@@ -62,22 +62,25 @@ document.addEventListener("DOMContentLoaded", function () {
     zoomables.forEach(img => {
         img.addEventListener("click", () => {
             const gallery = img.dataset.gallery;
+            modal.style.display = "block";
+    
             if (gallery && galleryImages[gallery]) {
                 currentGallery = galleryImages[gallery];
                 currentIndex = 0;
-                modal.style.display = "block";
                 modalImg.src = currentGallery[currentIndex];
                 displayThumbnails(currentGallery, currentIndex);
-                modalImg.style.maxWidth = "900px"; // même taille que GLPI
             } else {
-                modal.style.display = "block";
-                modalImg.src = img.src;
                 currentGallery = [];
+                modalImg.src = img.src;
                 modalThumbnails.innerHTML = "";
-                modalImg.style.maxWidth = "500px"; // taille standard
             }
+    
+            // 🖼️ Agrandissement confortable
+            modalImg.style.maxWidth = "1000px";
+            modalImg.style.maxHeight = "90vh";
         });
     });
+    
 
     // Navigation clavier
     window.addEventListener("keydown", (e) => {
