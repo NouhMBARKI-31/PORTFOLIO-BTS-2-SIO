@@ -219,6 +219,37 @@
     transform: scale(1.05);
 }
 
+/* 🖼️ Galerie dans les projets */
+.project-gallery {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.project-gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease-in-out;
+}
+.project-gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* 🧠 NOUVELLE SECTION PROJETS */
+.project-section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    color: #2C3E50;
+    border-top: 2px dashed #4CAF50;
+    padding-top: 20px;
+}
+
 /* 📱 RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .experience-container {
@@ -235,6 +266,9 @@
     .btn-details,
     .btn-download {
         width: 100%;
+    }
+    .project-gallery {
+        justify-content: center;
     }
 }
 

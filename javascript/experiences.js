@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     /* 🕒 MISE À JOUR DE LA DATE ET HEURE EN DIRECT */
     function updateDateTime() {
         const now = new Date();
@@ -38,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    window.toggleDetails = toggleDetails; // rendre accessible globalement
+
     /* 📥 FORCER LE TÉLÉCHARGEMENT DES RAPPORTS DE STAGE */
     function forceDownload(event, fileUrl) {
         event.preventDefault(); // Empêche l’ouverture du fichier dans un nouvel onglet
@@ -49,22 +50,35 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.removeChild(link);
     }
 
+    window.forceDownload = forceDownload;
+
     /* 🔼 BOUTON RETOUR EN HAUT */
     const topButton = document.getElementById("topButton");
 
     window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-            topButton.style.display = "block";
-        } else {
-            topButton.style.display = "none";
-        }
+        topButton.style.display = window.scrollY > 300 ? "block" : "none";
     });
 
     topButton.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Rendre les fonctions accessibles globalement
-    window.toggleDetails = toggleDetails;
-    window.forceDownload = forceDownload;
+    /* 🖼️ GALERIE D’IMAGES POUR LES PROJETS SCOLAIRES */
+    const toggles = document.querySelectorAll("[data-toggle-gallery]");
+
+    toggles.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const targetId = btn.dataset.toggleGallery;
+            const container = document.getElementById(targetId);
+            if (container.classList.contains("show")) {
+                container.classList.remove("show");
+                container.style.display = "none";
+                btn.innerText = "Voir la galerie ⬇️";
+            } else {
+                container.classList.add("show");
+                container.style.display = "flex";
+                btn.innerText = "Masquer la galerie ⬆️";
+            }
+        });
+    });
 });

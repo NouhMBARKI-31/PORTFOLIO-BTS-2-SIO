@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- HEADER (Identique à Accueil et CV) -->
+    <!-- HEADER -->
     <header>
         <div class="logo">
             <a href="https://www.limayrac.fr/" target="_blank">
@@ -22,7 +22,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">Accueil</a></li> <!-- mettre la meme chose pour chaque page -->
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="experiences.html" class="active">Situations professionnelles</a></li>
                 <li><a href="competences.html">Bloc de Compétences</a></li>
@@ -36,16 +36,15 @@
         </div>
     </header>
 
-    <!-- INTRODUCTION (Comme dans CV et Accueil) -->
+    <!-- INTRO -->
     <section class="experience-intro">
         <h2>🚀 Mes Expériences Professionnelles</h2>
         <p>Découvrez mes stages réalisés durant mon BTS SIO.</p>
     </section>
 
-    <!-- Horloge dynamique sous l'intro -->
     <div class="date-heure" id="dateHeure"></div>
 
-    <!-- SECTION STAGES -->
+    <!-- STAGES -->
     <section class="experiences-section">
         <h2>📌 Mes Stages</h2>
 
@@ -82,8 +81,6 @@
                     </div>
                 </div>
             </div>
-            
-                
 
             <!-- Stage 2024 -->
             <div class="experience-card">
@@ -115,10 +112,97 @@
                     </div>
                 </div>
             </div>
-            
+        </div>
+
+        <!-- 🧪 Projets Scolaires -->
+        <h2>📚 Projets Scolaires</h2>
+
+        <div class="experience-container">
+
+            <!-- Projet 1 : Football -->
+            <div class="experience-card">
+                <div class="experience-card-content">
+                    <h3>📆 1ère année - Semestre 1</h3>
+                    <h4>Site web statique de Football</h4>
+                    <p><b>Projet individuel</b></p>
+                    <ul>
+                        <li>HTML/CSS : Structure et mise en page du site.</li>
+                        <li>Navigation entre les rubriques footballistiques.</li>
+                        <li>Premier projet web réalisé au BTS SIO.</li>
+                    </ul>
+                    <div class="experience-actions">
+                        <button class="btn-details" onclick="toggleDetails('details-projet1')">Voir plus</button>
+                    </div>
+                    <div class="details" id="details-projet1">
+                        <h3>Galerie du projet :</h3>
+                        <div class="gallery">
+                            <img src="../images/football1.png" alt="Page accueil football" class="main-img" onclick="toggleGallery(this)">
+                            <div class="gallery-hidden">
+                                <img src="../images/football2.png" alt="Page 2 football">
+                                <img src="../images/football3.png" alt="Page 3 football">
+                                <img src="../images/football4.png" alt="Page 4 football">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 2 : Site dynamique -->
+            <div class="experience-card">
+                <div class="experience-card-content">
+                    <h3>📆 1ère année - Semestre 2</h3>
+                    <h4>Site web dynamique Sport</h4>
+                    <p><b>Projet en binôme</b></p>
+                    <ul>
+                        <li>Création de comptes avec rôles : admin, superadmin, utilisateur.</li>
+                        <li>Technologies utilisées : PHP, SQL, HTML/CSS.</li>
+                        <li>Connexion à base de données.</li>
+                    </ul>
+                    <div class="experience-actions">
+                        <button class="btn-details" onclick="toggleDetails('details-projet2')">Voir plus</button>
+                    </div>
+                    <div class="details" id="details-projet2">
+                        <h3>Galerie du projet :</h3>
+                        <div class="gallery">
+                            <img src="../images/dynamiquesport1.png" alt="Page site dynamique" class="main-img" onclick="toggleGallery(this)">
+                            <div class="gallery-hidden">
+                                <img src="../images/dynamiquesport2.png" alt="Base de données sport">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 3 : RestoWeb / Swing -->
+            <div class="experience-card">
+                <div class="experience-card-content">
+                    <h3>📆 2ème année</h3>
+                    <h4>Projet RestoWeb & RestoSwing</h4>
+                    <p><b>Projet en groupe (4 personnes)</b></p>
+                    <ul>
+                        <li>Site client RestoWeb en HTML/PHP/SQL.</li>
+                        <li>App Java Swing pour les restaurateurs.</li>
+                        <li>Interaction avec la base de données MySQL.</li>
+                    </ul>
+                    <div class="experience-actions">
+                        <button class="btn-details" onclick="toggleDetails('details-projet3')">Voir plus</button>
+                    </div>
+                    <div class="details" id="details-projet3">
+                        <h3>Galerie du projet :</h3>
+                        <div class="gallery">
+                            <img src="../images/restoweb1.png" alt="Page RestoWeb" class="main-img" onclick="toggleGallery(this)">
+                            <div class="gallery-hidden">
+                                <img src="../images/restoweb2.png" alt="BDD RestoWeb">
+                                <img src="../images/restoswing1.png" alt="RestoSwing Java">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- FOOTER IDENTIQUE À L'ACCUEIL -->
+    <!-- FOOTER -->
     <footer>
         <p>© 2024 - Nouh Mbarki | Développeur Web</p>
         <div class="footer-links">
@@ -131,15 +215,14 @@
 
     <script>
         function forceDownload(event, fileUrl) {
-            event.preventDefault(); // Empêche l’ouverture du fichier dans un nouvel onglet
+            event.preventDefault();
             const link = document.createElement("a");
             link.href = fileUrl;
-            link.download = fileUrl.split("/").pop(); // Définit le nom du fichier
+            link.download = fileUrl.split("/").pop();
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
     </script>
-
 </body>
 </html>
