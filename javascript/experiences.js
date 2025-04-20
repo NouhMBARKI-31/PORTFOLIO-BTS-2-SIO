@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setInterval(updateDateTime, 1000);
-    updateDateTime(); // Exécuter immédiatement
+    updateDateTime();
 
     /* 🎬 ANIMATION DES CARTES D'EXPÉRIENCES */
     const experienceCards = document.querySelectorAll(".experience-card");
@@ -37,14 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    window.toggleDetails = toggleDetails; // rendre accessible globalement
+    window.toggleDetails = toggleDetails;
 
-    /* 📥 FORCER LE TÉLÉCHARGEMENT DES RAPPORTS DE STAGE */
+    /* 📥 TÉLÉCHARGEMENT DE FICHIER PDF */
     function forceDownload(event, fileUrl) {
-        event.preventDefault(); // Empêche l’ouverture du fichier dans un nouvel onglet
+        event.preventDefault();
         const link = document.createElement("a");
         link.href = fileUrl;
-        link.download = fileUrl.split("/").pop(); // Définit le nom du fichier
+        link.download = fileUrl.split("/").pop();
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.forceDownload = forceDownload;
 
-    /* 🔼 BOUTON RETOUR EN HAUT */
+    /* 🔼 RETOUR EN HAUT */
     const topButton = document.getElementById("topButton");
 
     window.addEventListener("scroll", function () {
@@ -63,22 +63,42 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    /* 🖼️ GALERIE D’IMAGES POUR LES PROJETS SCOLAIRES */
-    const toggles = document.querySelectorAll("[data-toggle-gallery]");
+    /* 🖼️ GESTION DE LA GALERIE : afficher les images après clic sur la première */
+    const galleries = document.querySelectorAll(".gallery");
 
-    toggles.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const targetId = btn.dataset.toggleGallery;
-            const container = document.getElementById(targetId);
-            if (container.classList.contains("show")) {
-                container.classList.remove("show");
-                container.style.display = "none";
-                btn.innerText = "Voir la galerie ⬇️";
-            } else {
-                container.classList.add("show");
-                container.style.display = "flex";
-                btn.innerText = "Masquer la galerie ⬆️";
-            }
-        });
+    galleries.forEach(gallery => {
+        const mainImg = gallery.querySelector(".main-img");
+        const hiddenContainer = gallery.querySelector(".gallery-hidden");
+
+        if (mainImg && hiddenContainer) {
+            mainImg.addEventListener("click", () => {
+                hiddenContainer.classList.toggle("show");
+            });
+
+            const allImgs = hiddenContainer.querySelectorAll("img");
+
+            allImgs.forEach(img => {
+                img.addEventListener("click", () => {
+                    openModalWithImage(img.src);
+                });
+            });
+        }
+    });
+
+    /* 🔍 Zoom image dans modale plein écran */
+    const modal = document.createElement("div");
+    modal.classList.add("modal-img-viewer");
+    const modalImg = document.createElement("img");
+    modal.appendChild(modalImg);
+    document.body.appendChild(modal);
+
+    function openModalWithImage(src) {
+        modalImg.src = src;
+        modal.classList.add("active");
+    }
+
+    modal.addEventListener("click", () => {
+        modal.classList.remove("active");
+        modalImg.src = "";
     });
 });
