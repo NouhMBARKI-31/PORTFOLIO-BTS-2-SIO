@@ -76,8 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
     
             // 🖼️ Agrandissement confortable
-            modalImg.style.maxWidth = "1000px";
-            modalImg.style.maxHeight = "90vh";
+            modalImg.style.maxWidth = "100%";
+            modalImg.style.maxHeight = "95vh";
+            modalImg.style.width = "auto";
+            modalImg.style.height = "auto";
+
         });
     });
     
