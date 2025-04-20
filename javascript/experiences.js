@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /* 🕒 MISE À JOUR DE LA DATE ET HEURE EN DIRECT */
+    // 🕒 Affichage de la date et de l'heure dynamiques
     function updateDateTime() {
         const now = new Date();
         const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
@@ -7,11 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const formattedTime = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
         document.getElementById("dateHeure").innerHTML = `${formattedDate} - ${formattedTime}`;
     }
-
     setInterval(updateDateTime, 1000);
-    updateDateTime(); // Exécuter immédiatement
+    updateDateTime();
 
-    /* 🎬 ANIMATION DES CARTES D'EXPÉRIENCES */
+    // 🎬 Animation des cartes
     const experienceCards = document.querySelectorAll(".experience-card");
     experienceCards.forEach((card, index) => {
         card.style.opacity = "0";
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300 * index);
     });
 
-    /* 🔍 AFFICHER/MASQUER LES DÉTAILS */
+    // 🔍 Voir plus / Voir moins
     function toggleDetails(id) {
         const details = document.getElementById(id);
         const button = document.querySelector(`button[onclick="toggleDetails('${id}')"]`);
@@ -36,34 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
             button.innerText = "Voir plus ⬇️";
         }
     }
-
     window.toggleDetails = toggleDetails;
 
-    /* 📥 TÉLÉCHARGEMENT DE FICHIER PDF */
-    function forceDownload(event, fileUrl) {
-        event.preventDefault();
-        const link = document.createElement("a");
-        link.href = fileUrl;
-        link.download = fileUrl.split("/").pop();
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
-    window.forceDownload = forceDownload;
-
-    /* 🔼 RETOUR EN HAUT */
+    // 🔼 Retour en haut
     const topButton = document.getElementById("topButton");
-
     window.addEventListener("scroll", function () {
         topButton.style.display = window.scrollY > 300 ? "block" : "none";
     });
-
     topButton.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    /* 🖼️ GESTION DE LA GALERIE : afficher les images après clic sur la première */
+    // 🖼️ GESTION DE LA GALERIE INTERACTIVE
     const galleries = document.querySelectorAll(".gallery");
 
     galleries.forEach(gallery => {
@@ -71,12 +54,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const hiddenContainer = gallery.querySelector(".gallery-hidden");
 
         if (mainImg && hiddenContainer) {
+            let isGalleryOpen = false;
+
             mainImg.addEventListener("click", () => {
-                gallery.classList.toggle("show"); // ✅ Affiche le reste de la galerie
+                if (isGalleryOpen) {
+                    openModalWithImage(mainImg.src);
+                } else {
+                    gallery.classList.add("show");
+                    isGalleryOpen = true;
+                }
             });
 
             const allImgs = hiddenContainer.querySelectorAll("img");
-
             allImgs.forEach(img => {
                 img.addEventListener("click", () => {
                     openModalWithImage(img.src);
@@ -85,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* 📸 MODALE POUR ZOOM */
+    // 🔍 Affichage d'image en plein écran (zoom)
     const modal = document.createElement("div");
     modal.classList.add("modal-img-viewer");
     const modalImg = document.createElement("img");
