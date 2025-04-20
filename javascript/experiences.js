@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setInterval(updateDateTime, 1000);
-    updateDateTime();
+    updateDateTime(); // Exécuter immédiatement
 
     /* 🎬 ANIMATION DES CARTES D'EXPÉRIENCES */
     const experienceCards = document.querySelectorAll(".experience-card");
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (mainImg && hiddenContainer) {
             mainImg.addEventListener("click", () => {
-                hiddenContainer.classList.toggle("show");
+                gallery.classList.toggle("show"); // ✅ Affiche le reste de la galerie
             });
 
             const allImgs = hiddenContainer.querySelectorAll("img");
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* 🔍 Zoom image dans modale plein écran */
+    /* 📸 MODALE POUR ZOOM */
     const modal = document.createElement("div");
     modal.classList.add("modal-img-viewer");
     const modalImg = document.createElement("img");
