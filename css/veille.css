@@ -125,9 +125,10 @@ body {
   }
   
   .veille-intro p strong {
-    display: block;
-    font-size: 20px;
+    display: inline;
+    font-size: 18px;
     color: #ffffff;
-    margin-bottom: 10px;
+    font-weight: bold;
   }
+  
   
