@@ -278,3 +278,52 @@ body {
     border-color: yellow;
   }
   
+  .pdf-competences {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .pdf-competences h2 {
+    color: #2C3E50;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  
+  .pdf-desc {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .btn-container {
+    margin: 20px 0;
+  }
+  
+  .btn-download {
+    background-color: #28A745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-download:hover {
+    background-color: #1e7e34;
+  }
+  
+  .pdf-frame {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
